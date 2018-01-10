@@ -111,3 +111,8 @@ Third_Class_Survived_number/Third_class_number
 ##Crew
 Crew_Survived_number/Crew_number
 ```
+
+###3 Data Visualization
+```{r}
+ToothGrowth
+```
