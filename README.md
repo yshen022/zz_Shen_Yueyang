@@ -2,7 +2,7 @@ My name is Yueyang Shen. I am in the Medical Genetics program. My project is to 
 
 In the GSAT 540, I hope to learn to use Rstudio as a statistical tool to solve my research project in the future.
 
-You can visit my facebook or linkedin profile below:
+You can visit my facebook or linkedin profile below
 https://www.facebook.com/yoyang.shen
 https://ca.linkedin.com/in/young-shen-35255644
 
