@@ -24,9 +24,12 @@ Adult <- Titanic_data[Titanic_data$Age=="Adult",]
 Finally, the 'sum()' function is used to calculate the number Child and Adult on titanic.
 ```{r echo=TRUE, eval=TRUE}
 ##the number of Chilren on Titanic:
-sum(Child$Freq,na.rm=TRUE)
+Child_number <- sum(Child$Freq,na.rm=TRUE)
 ##the numver of adults on Titanic:
-sum(Adult$Freq,na.rm=TRUE)
+Adult_number <- sum(Adult$Freq,na.rm=TRUE)
+
+Child_number
+Adult_number
 ```
 
 To determine the number of male adult and female adult, I further selected subset from the Adult on Titanic data set previously developed. I then use the 'sum()' function again to calculate the number of male adult and female adult on Titanic.
@@ -43,7 +46,6 @@ Female_Adult_number <- sum(Female_Adult$Freq,na.rm=TRUE)
 
 Finally, a 'if' and 'else if' statment is used to print out the result.
 ```{r echo=TRUE, eval=TRUE}
-
 if(Male_Adult_number > Female_Adult_number){
    print("There are more male adults on Titanic")
 } else if (Male_Adult_number < Female_Adult_number){
@@ -53,3 +55,59 @@ if(Male_Adult_number > Female_Adult_number){
 }
 ```
 
+
+###2.2 Survival Rate
+```{r echo=TRUE, eval=TRUE}
+Alive_Child <- Child[Child$Survived=="Yes",]
+Alive_Child_number <- sum(Alive_Child$Freq,na.rm=TRUE)
+Child_Survival_rate = Alive_Child_number/Child_number
+
+Alive_Adult <- Adult[Adult$Survived=="Yes",]
+Alive_Adult_number <- sum(Alive_Adult$Freq,na.rm=TRUE)
+Adult_Survival_rate = Alive_Adult_number/Adult_number
+
+Child_Survival_rate
+Adult_Survival_rate
+```
+
+```{r echo=TRUE, eval=TRUE}
+if(Adult_Survival_rate > Child_Survival_rate){
+   print("Adults have a better survival rate")
+} else if (Adult_Survival_rate < Child_Survival_rate){
+  print("Children have a better survival rate")
+} else if(Adult_Survival_rate == Child_Survival_rate){
+  print("The survival rate are same between children and adult")
+}
+```
+
+
+```{r echo=TRUE, eval=TRUE}
+First_Class <- Titanic_data[Titanic_data$Class=="1st",]
+Second_Class <- Titanic_data[Titanic_data$Class=="2nd",]
+Third_Class <- Titanic_data[Titanic_data$Class=="3rd",]
+Crew <- Titanic_data[Titanic_data$Class=="Crew",]
+
+First_class_number <- sum(First_Class$Freq,na.rm=TRUE)
+Second_class_number <- sum(Second_Class$Freq,na.rm=TRUE)
+Third_class_number <- sum(Third_Class$Freq,na.rm=TRUE)
+Crew_number <- sum(Crew$Freq,na.rm=TRUE)
+
+First_Class_Survived <- First_Class[First_Class$Survived=="Yes",]
+Second_Class_Survived <- Second_Class[Second_Class$Survived=="Yes",]
+Third_Class_Survived <- Third_Class[Third_Class$Survived=="Yes",]
+Crew_Survived <- Crew[Crew$Survived=="Yes",]
+
+First_Class_Survived_number <- sum(First_Class_Survived$Freq,na.rm=TRUE)
+Second_Class_Survived_number <- sum(Second_Class_Survived$Freq,na.rm=TRUE)
+Third_Class_Survived_number <- sum(Third_Class_Survived$Freq,na.rm=TRUE)
+Crew_Survived_number <- sum(Crew_Survived$Freq,na.rm=TRUE)
+
+##First Class Survival rate
+First_Class_Survived_number/First_class_number
+##2nd class
+Second_Class_Survived_number/Second_class_number
+##3rd class
+Third_Class_Survived_number/Third_class_number
+##Crew
+Crew_Survived_number/Crew_number
+```
