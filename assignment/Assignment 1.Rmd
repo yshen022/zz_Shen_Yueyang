@@ -1,0 +1,30 @@
+---
+title: "Practice assignment"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+###2.1 Passenger Breakdown
+The first step is to convert the array into a data frame using 'data.frame()' function. In this case, I assigned the data frame to "Titanic_data"
+```{r echo=TRUE, eval=TRUE}
+Titanic_data <- data.frame(Titanic)
+
+```
+
+After that, 2 subset of the data were selected for all the children and adult respectively.
+```{r echo=TRUE, eval=TRUE}
+Child <- Titanic_data[Titanic_data$Age=="Child",]
+Adult <- Titanic_data[Titanic_data$Age=="Adult",]
+```
+
+Finally, the 'sum()' function is used to calculate the number Child and Adult on titanic.
+```{r echo=TRUE, eval=TRUE}
+##the number of Chilren on Titanic:
+sum(Child$Freq,na.rm=TRUE)
+##the numver of adults on Titanic:
+sum(Adult$Freq,na.rm=TRUE)
+```
